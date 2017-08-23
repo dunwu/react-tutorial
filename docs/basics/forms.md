@@ -25,7 +25,7 @@ HTML表单元素与React中的其他DOM元素有所不同,因为表单元素生�
 
 ## 受控组件
 
-在HTML当中，像`<input>`,`<textarea>`, 和 `<select>`这类表单元素会维持自身状态，并根据用户输入进行更新。但在React中，可变的状态通常保存在组件的状态属性中，并且只能用 [`setState()`](/react/docs/react-component.html#setstate). 方法进行更新.
+在HTML当中，像`<input>`,`<textarea>`, 和 `<select>`这类表单元素会维持自身状态，并根据用户输入进行更新。但在React中，可变的状态通常保存在组件的状态属性中，并且只能用 [`setState()`](react-component.html#setstate). 方法进行更新.
 
 我们通过使react变成一种单一数据源的状态来结合二者。React负责渲染表单的组件仍然控制用户后续输入时所发生的变化。相应的，其值由React控制的输入表单元素称为“受控组件”。
 
@@ -255,9 +255,9 @@ partialState[name] = value;
 this.setState(partialState);
 ```
 
-同样由于setState()自动将部分状态合并到当前状态[merges a partial state into the current state](/react/docs/state-and-lifecycle.html#state-updates-are-merged)，因此我们只需要在已经更改的部分调用它。
+同样由于setState()自动将部分状态合并到当前状态[merges a partial state into the current state](state-and-lifecycle.html#state-updates-are-merged)，因此我们只需要在已经更改的部分调用它。
 
 ## 受控组件的替代方法
 
-有时使用受控组件可能很繁琐，因为您要为数据可能发生变化的每一种方式都编写一个事件处理程序，并通过一个组件来管理全部的状态。当您将预先存在的代码库转换为React或将React应用程序与非React库集成时，这可能变得特别烦人。在以上情况下，你或许应该看看[非受控组件](/react/docs/uncontrolled-components.html)，这是一种表单的替代技术。
+有时使用受控组件可能很繁琐，因为您要为数据可能发生变化的每一种方式都编写一个事件处理程序，并通过一个组件来管理全部的状态。当您将预先存在的代码库转换为React或将React应用程序与非React库集成时，这可能变得特别烦人。在以上情况下，你或许应该看看[非受控组件](../adavanced/uncontrolled-components.html)，这是一种表单的替代技术。
   

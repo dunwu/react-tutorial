@@ -18,11 +18,11 @@ console.log(doubled);
 
 代码打印出`[2, 4, 6, 8, 10]`
 
-在React中，把数组转化为数列[元素](/react/docs/rendering-elements.html)的过程是相似的
+在React中，把数组转化为数列[元素](rendering-elements.html)的过程是相似的
 
 ### 渲染多样的组件
 
-你可以通过使用`{}`在JSX内构建一个[元素集合](/react/docs/introducing-jsx.html#embedding-expressions-in-jsx)
+你可以通过使用`{}`在JSX内构建一个[元素集合](introducing-jsx.html#embedding-expressions-in-jsx)
 
 下面，我们使用Javascript中的[`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)方法循遍历`numbers`数组。对数组中的每个元素返回`<li>`标签，最后我们得到一个数组`listItems`
 
@@ -33,7 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-我们把整个`listItems`插入到`ul`元素中，然后[渲染进DOM](/react/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+我们把整个`listItems`插入到`ul`元素中，然后[渲染进DOM](rendering-elements.html#rendering-an-element-into-the-dom):
 
 ```javascript{2}
 ReactDOM.render(
@@ -48,7 +48,7 @@ ReactDOM.render(
 
 ### 基础列表组件
 
-通常你需要渲染一个列表到[组件](/react/docs/components-and-props.html)中
+通常你需要渲染一个列表到[组件](components-and-props.html)中
 
 我们可以把前面的例子重构成一个组件。这个组件接收`numbers`数组作为参数，输出一个无序列表。
 
@@ -131,7 +131,7 @@ const todoItems = todos.map((todo, index) =>
 ```
 
 
-如果列表可以重新排序，我们不建议使用索引来进行排序，因为这会导致渲染变得很慢。如果你想要了解更多，请点击[深度解析key的必要性](/react/docs/reconciliation.html#recursing-on-children)
+如果列表可以重新排序，我们不建议使用索引来进行排序，因为这会导致渲染变得很慢。如果你想要了解更多，请点击[深度解析key的必要性](../advanced/jsx-in-depth.html#recursing-on-children)
 
 ### 用keys提取组件
 
