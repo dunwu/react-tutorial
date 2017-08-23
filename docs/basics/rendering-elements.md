@@ -88,7 +88,7 @@ React DOM 首先会比较元素内容先后的不同，而在渲染过程中只�
 
 你可以使用浏览器的开发者工具来检查一下[之前的例子](http://codepen.io/gaearon/pen/gwoJZk?editors=0010)。
 
-![DOM inspector showing granular updates](/react/img/docs/granular-dom-updates.gif)
+![DOM inspector showing granular updates](../assets/images/granular-dom-updates.gif)
 
 即便我们的代码每秒钟都创建了一个新的元素，在渲染步骤中，React 只改变了页面中数字发生变化的部分。
 

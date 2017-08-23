@@ -7,8 +7,6 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-参考[该例子](/react/docs/rendering-elements.html#updating-the-rendered-element)。
-
 到目前为止我们只学习了一种方法来更新UI。
 
 我们调用 `ReactDOM.render()` 方法来改变输出：
