@@ -2,6 +2,7 @@
 
 ## 目录
 
+* [安装](installation.html)
 * [Hello World](hello-world.html)
 * [JSX 简介](introducing-jsx.html)
 * [元素渲染](rendering-elements.html)
