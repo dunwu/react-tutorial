@@ -31,6 +31,15 @@
   * [高阶组件](advanced/higher-order-components.md)
   * [与第三方协同](advanced/integrating-with-other-libraries.md)
   * [可访问性](advanced/accessibility.md)
+* [API](api/README.md)
+  * [reference-dom-elements](api/reference-dom-elements.md)
+  * [reference-events](api/reference-events.md)
+  * [reference-pure-render-mixin](api/reference-pure-render-mixin.md)
+  * [reference-react](api/reference-react.md)
+  * [reference-react-component](api/reference-react-component.md)
+  * [reference-react-dom](api/reference-react-dom.md)
+  * [reference-react-dom-server](api/reference-react-dom-server.md)
+
 * [附录](appendix/README.md)
   * [资料](appendix/resources.md)
 
