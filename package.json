@@ -4,7 +4,7 @@
   "scripts": {
     "clean": "rimraf _book",
     "prepare": "gitbook install",
-    "build": "gitbook build -g atlantis1024/react-notes",
+    "build": "gitbook build",
     "start": "gitbook serve"
   },
   "repository": {
