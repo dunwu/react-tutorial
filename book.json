@@ -3,12 +3,11 @@
   "title": "react-notes",
   "description": "React 学习笔记",
   "author": "Zhang Peng",
-  "output.name": "site",
   "language": "zh-hans",
   "root": "./docs",
   "links": {
     "sidebar": {
-      "react-notes": "https://github.com/atlantis1024/react-notes"
+      "react-notes": "https://github.com/zp1024/react-notes"
     }
   },
   "plugins": [
@@ -46,11 +45,11 @@
       }
     },
     "edit-link": {
-      "base": "https://github.com/atlantis1024/react-notes/blob/master",
+      "base": "https://github.com/zp1024/react-notes/blob/master/docs",
       "label": "编辑此页面"
     },
     "github": {
-      "url": "https://github.com/atlantis1024"
+      "url": "https://github.com/zp1024"
     },
     "simple-page-toc": {
       "maxDepth": 4,
