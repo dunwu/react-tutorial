@@ -7,7 +7,7 @@
   "root": "./docs",
   "links": {
     "sidebar": {
-      "react-notes": "https://github.com/zp1024/react-notes"
+      "react-notes": "https://github.com/dunwu/react-notes"
     }
   },
   "plugins": [
@@ -45,11 +45,11 @@
       }
     },
     "edit-link": {
-      "base": "https://github.com/zp1024/react-notes/blob/master/docs",
+      "base": "https://github.com/dunwu/react-notes/blob/master/docs",
       "label": "编辑此页面"
     },
     "github": {
-      "url": "https://github.com/zp1024"
+      "url": "https://github.com/dunwu"
     },
     "simple-page-toc": {
       "maxDepth": 4,

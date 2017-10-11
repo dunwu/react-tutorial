@@ -5,4 +5,4 @@ git init
 git checkout -b gh-pages
 git add .
 git commit -am "update book"
-git push git@github.com:zp1024/react-notes gh-pages --force"
+git push git@github.com:dunwu/react-notes gh-pages --force"
