@@ -1,8 +1,8 @@
 @echo off
-echo [INFO] Publis _book to gh-pages.
-cd ../_book
+echo [INFO] deploy dist to gh-pages.
+cd ../dist
 git init
-git checkout -b gh-pages
-git add .
-git commit -am "update book"
-git push git@github.com:dunwu/react-notes gh-pages --force"
+git add -A
+git commit -am "deploy"
+git push -f git@github.com:dunwu/react-tutorial.git master:gh-pages"
+cd ..

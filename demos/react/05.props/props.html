@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>React 属性 - 默认 Props</title>
+  <script src="../libs/react.production.min.js"></script>
+  <script src="../libs/react-dom.production.min.js"></script>
+  <script src="../libs/browser.min.js"></script>
+</head>
+<body>
+<div id="example"/>
+<script type="text/babel">
+  class HelloMessage extends React.Component {
+    getDefaultProps() { // 默认属性
+      return {
+        name: 'Tom'
+      };
+    }
+
+    render() {
+      return <h1>Hello, {this.props.name}</h1>;
+    }
+  };
+
+  ReactDOM.render(
+    <div>
+      <HelloMessage/>
+      <HelloMessage name="Jack"/>
+    </div>,
+    document.getElementById('example')
+  );
+</script>
+</body>
+</html>
