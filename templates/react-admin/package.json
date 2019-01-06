@@ -45,14 +45,14 @@
     ]
   },
   "dependencies": {
-    "antd": "^2.13.4",
+    "antd": "^3.12.0",
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "mockjs": "^1.0.1-beta3",
     "moment": "^2.19.1",
-    "react": "15.6.0",
-    "react-dom": "15.6.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.6",
