@@ -1,7 +1,8 @@
 export default {
+  'app.login.nickname': 'nickname',
   'app.login.userName': 'userName',
   'app.login.password': 'password',
-  'app.login.message-invalid-credentials': 'Invalid username or password（admin/ant.design）',
+  'app.login.message-invalid-credentials': 'Invalid username or password（admin/123456）',
   'app.login.message-invalid-verification-code': 'Invalid verification code',
   'app.login.tab-login-credentials': 'Credentials',
   'app.login.tab-login-mobile': 'Mobile number',
@@ -16,12 +17,15 @@ export default {
     'This project is a demo project and will not actually send you a verification code. Please switch to the account password login interface and log in as prompted.',
   'app.register.sign-in': 'Already have an account?',
   'app.register-result.msg': 'Account：registered at {email}',
+  'app.register-result.desc':
+    'You have registered successfully. You can login by nickname or email',
   'app.register-result.activation-email':
     'The activation email has been sent to your email address and is valid for 24 hours. Please log in to the email in time and click on the link in the email to activate the account.',
   'app.register-result.back-home': 'Back to home',
   'app.register-result.view-mailbox': 'View mailbox',
   'validation.email.required': 'Please enter your email!',
   'validation.email.wrong-format': 'The email address is in the wrong format!',
+  'validation.nickname.required': 'Please enter your nickname!',
   'validation.userName.required': 'Please enter your userName!',
   'validation.password.required': 'Please enter your password!',
   'validation.password.twice': 'The passwords entered twice do not match!',

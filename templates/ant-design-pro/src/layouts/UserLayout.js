@@ -30,7 +30,7 @@ const links = [
 
 const copyright = (
   <Fragment>
-    Copyright <Icon type="copyright" /> 2019 蚂蚁金服体验技术部出品
+    Copyright <Icon type="copyright" /> 2019 Zhang Peng
   </Fragment>
 );
 
@@ -66,7 +66,7 @@ class UserLayout extends Component {
                   <span className={styles.title}>Ant Design</span>
                 </Link>
               </div>
-              <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范</div>
+              <div className={styles.desc}>react + ant-design 中后台前端模板</div>
             </div>
             {children}
           </div>

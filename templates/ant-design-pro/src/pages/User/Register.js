@@ -3,7 +3,7 @@ import { connect } from 'dva';
 import { formatMessage, FormattedMessage } from 'umi-plugin-react/locale';
 import Link from 'umi/link';
 import router from 'umi/router';
-import { Form, Input, Button, Modal, Select, Row, Col, Popover, Progress } from 'antd';
+import { Form, Input, Button, Modal, Row, Col, Select, Popover, Progress } from 'antd';
 import styles from './Register.less';
 
 const FormItem = Form.Item;
@@ -48,10 +48,12 @@ class Register extends Component {
     prefix: '86',
   };
 
+  submitting;
+
   componentDidUpdate() {
     const { form, register } = this.props;
-    const account = form.getFieldValue('mail');
-    if (register.status === 'ok') {
+    const account = form.getFieldValue('email');
+    if (register.success) {
       router.push({
         pathname: '/user/register-result',
         state: {
@@ -180,6 +182,7 @@ class Register extends Component {
     const { form, submitting } = this.props;
     const { getFieldDecorator } = form;
     const { count, prefix, help, visible } = this.state;
+
     return (
       <div className={styles.main}>
         <h3>
@@ -187,7 +190,18 @@ class Register extends Component {
         </h3>
         <Form onSubmit={this.handleSubmit}>
           <FormItem>
-            {getFieldDecorator('mail', {
+            {getFieldDecorator('nickname', {
+              rules: [
+                {
+                  required: true,
+                  message: formatMessage({ id: 'validation.nickname.required' }),
+                },
+                { min: 3, max: 20, message: '昵称长度必须为3到20个字符' },
+              ],
+            })(<Input size="large" placeholder="昵称" />)}
+          </FormItem>
+          <FormItem>
+            {getFieldDecorator('email', {
               rules: [
                 {
                   required: true,

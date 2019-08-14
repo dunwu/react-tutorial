@@ -1,55 +1,60 @@
 // 代码中会兼容本地 service mock 以及部署站点的静态数据
 export default {
   // 支持值为 Object 和 Array
-  'GET /api/currentUser': {
-    name: 'Serati Ma',
-    avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
-    userid: '00000001',
-    email: 'antdesign@alipay.com',
-    signature: '海纳百川，有容乃大',
-    title: '交互专家',
-    group: '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
-    tags: [
-      {
-        key: '0',
-        label: '很有想法的',
+  'GET /api/user/currentUser': {
+    success: true,
+    code: '0',
+    message: 'success',
+    data: {
+      name: 'Serati Ma',
+      avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+      userid: '00000001',
+      email: 'antdesign@alipay.com',
+      signature: '海纳百川，有容乃大',
+      title: '交互专家',
+      group: '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
+      tags: [
+        {
+          key: '0',
+          label: '很有想法的',
+        },
+        {
+          key: '1',
+          label: '专注设计',
+        },
+        {
+          key: '2',
+          label: '辣~',
+        },
+        {
+          key: '3',
+          label: '大长腿',
+        },
+        {
+          key: '4',
+          label: '川妹子',
+        },
+        {
+          key: '5',
+          label: '海纳百川',
+        },
+      ],
+      notifyCount: 12,
+      unreadCount: 11,
+      country: 'China',
+      geographic: {
+        province: {
+          label: '浙江省',
+          key: '330000',
+        },
+        city: {
+          label: '杭州市',
+          key: '330100',
+        },
       },
-      {
-        key: '1',
-        label: '专注设计',
-      },
-      {
-        key: '2',
-        label: '辣~',
-      },
-      {
-        key: '3',
-        label: '大长腿',
-      },
-      {
-        key: '4',
-        label: '川妹子',
-      },
-      {
-        key: '5',
-        label: '海纳百川',
-      },
-    ],
-    notifyCount: 12,
-    unreadCount: 11,
-    country: 'China',
-    geographic: {
-      province: {
-        label: '浙江省',
-        key: '330000',
-      },
-      city: {
-        label: '杭州市',
-        key: '330100',
-      },
+      address: '西湖区工专路 77 号',
+      phone: '0752-268888888',
     },
-    address: '西湖区工专路 77 号',
-    phone: '0752-268888888',
   },
   // GET POST 可省略
   'GET /api/users': [
@@ -72,32 +77,54 @@ export default {
       address: 'Sidney No. 1 Lake Park',
     },
   ],
-  'POST /api/login/account': (req, res) => {
+  'POST /api/user/login': (req, res) => {
     const { password, userName, type } = req.body;
-    if (password === 'ant.design' && userName === 'admin') {
+    if (password === '123456' && userName === 'admin') {
       res.send({
-        status: 'ok',
-        type,
-        currentAuthority: 'admin',
+        success: true,
+        code: '0',
+        message: 'success',
+        data: {
+          status: 'ok',
+          type,
+          currentAuthority: 'admin',
+        },
       });
       return;
     }
-    if (password === 'ant.design' && userName === 'user') {
+    if (password === '123456' && userName === 'user') {
       res.send({
-        status: 'ok',
-        type,
-        currentAuthority: 'user',
+        success: true,
+        code: '0',
+        message: 'success',
+        data: {
+          status: 'ok',
+          type,
+          currentAuthority: 'user',
+        },
       });
       return;
     }
     res.send({
-      status: 'error',
-      type,
-      currentAuthority: 'guest',
+      success: false,
+      code: '-1',
+      message: 'failed',
+      data: {
+        status: 'error',
+        type,
+        currentAuthority: 'guest',
+      },
     });
   },
-  'POST /api/register': (req, res) => {
-    res.send({ status: 'ok', currentAuthority: 'user' });
+  'POST /api/user/register': (req, res) => {
+    res.send({
+      success: true,
+      code: '0',
+      message: 'success',
+      data: {
+        currentAuthority: 'user',
+      },
+    });
   },
   'GET /api/500': (req, res) => {
     res.status(500).send({

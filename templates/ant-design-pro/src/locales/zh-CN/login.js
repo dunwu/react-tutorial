@@ -1,7 +1,8 @@
 export default {
+  'app.login.nickname': '昵称',
   'app.login.userName': '用户名',
   'app.login.password': '密码',
-  'app.login.message-invalid-credentials': '账户或密码错误（admin/ant.design）',
+  'app.login.message-invalid-credentials': '账户或密码错误（admin/123456）',
   'app.login.message-invalid-verification-code': '验证码错误',
   'app.login.tab-login-credentials': '账户密码登录',
   'app.login.tab-login-mobile': '手机号登录',
@@ -15,13 +16,15 @@ export default {
   'app.login.verification-code-warning':
     '此项目为演示项目，并不会真的给您发送验证码。请切换到账户密码登录界面按提示登录。',
   'app.register.sign-in': '使用已有账户登录',
-  'app.register-result.msg': '你的账户：{email} 注册成功',
+  'app.register-result.msg': '您的账户：{email} 注册成功',
+  'app.register-result.desc': '您已注册成功，可以使用昵称或邮箱登录账户',
   'app.register-result.activation-email':
-    '激活邮件已发送到你的邮箱中，邮件有效期为24小时。请及时登录邮箱，点击邮件中的链接激活帐户。',
+    '激活邮件已发送到您的邮箱中，邮件有效期为24小时。请及时登录邮箱，点击邮件中的链接激活帐户。',
   'app.register-result.back-home': '返回首页',
   'app.register-result.view-mailbox': '查看邮箱',
   'validation.email.required': '请输入邮箱地址！',
   'validation.email.wrong-format': '邮箱地址格式错误！',
+  'validation.nickname.required': '请输入昵称!',
   'validation.userName.required': '请输入用户名!',
   'validation.password.required': '请输入密码！',
   'validation.password.twice': '两次输入的密码不匹配!',
