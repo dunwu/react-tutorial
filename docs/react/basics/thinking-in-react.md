@@ -3,14 +3,14 @@ id: thinking-in-react
 title: React 理念
 permalink: docs/thinking-in-react.html
 redirect_from:
-  - 'blog/2013/11/05/thinking-in-react.html'
-  - 'docs/thinking-in-react-zh-CN.html'
+  - "blog/2013/11/05/thinking-in-react.html"
+  - "docs/thinking-in-react-zh-CN.html"
 prev: composition-vs-inheritance.html
 ---
 
 在我们的理念中，React 最初的目的是使用 JavaScript 创建大型的，快速响应的网络应用。它在我们的 Facebook 和 Instagram 中已经实践的非常好了。
 
-React的众多优点之一是它让你在编写代码的时候同时也在思考你的应用。在这篇文档中，我们会带你使用 React 一起创建一个可搜索的产品数据表格，并向你展示我们的思考过程。
+React 的众多优点之一是它让你在编写代码的时候同时也在思考你的应用。在这篇文档中，我们会带你使用 React 一起创建一个可搜索的产品数据表格，并向你展示我们的思考过程。
 
 ## 从模拟页面开始
 
@@ -41,23 +41,23 @@ React的众多优点之一是它让你在编写代码的时候同时也在思考
 
 ![Component diagram](../assets/images/thinking-in-react-components.png)
 
-在这里你会看到，我们的简单应用中有5个组件。我们把每个组件展示的数据用斜体表示。
+在这里你会看到，我们的简单应用中有 5 个组件。我们把每个组件展示的数据用斜体表示。
 
-  1. **`FilterableProductTable` (橙色):** 包含了整个例子
-  2. **`SearchBar` (蓝色):** 接受所有的*用户输入*
-  3. **`ProductTable` (绿色):** 根据*用户输入*过滤并展示*数据集合*
-  4. **`ProductCategoryRow` (绿松石色):** 展示每个*分类*的标题
-  5. **`ProductRow` (红色):** 用行来展示每个*产品*
+1. **`FilterableProductTable` (橙色):** 包含了整个例子
+2. **`SearchBar` (蓝色):** 接受所有的*用户输入*
+3. **`ProductTable` (绿色):** 根据*用户输入*过滤并展示*数据集合*
+4. **`ProductCategoryRow` (绿松石色):** 展示每个*分类*的标题
+5. **`ProductRow` (红色):** 用行来展示每个*产品*
 
 如果你查看 `ProductTable`，你会发现表头(包含 `Name` 和 `Price` 标签)并没有作为一个组件。这是一个偏好问题，选择哪种方式目前还存在争议。在这个例子中，我们把它作为 `ProductTable` 的一部分，因为它是渲染*数据集合*的一部分，而渲染*数据集合*是 `ProductTable` 的职责。然而，如果头部变得更加复杂(也就是，如果我们添加了排序功能)，它就有足够的理由成为一个单独的 `ProductTableHeader` 组件。
 
 现在我们已经确定了原型图中的组件，让我们把它们整理成层级结构。这很容易。原型图中的子组件在层级结构中应该作为子节点。
 
-  * `FilterableProductTable`
-    * `SearchBar`
-    * `ProductTable`
-      * `ProductCategoryRow`
-      * `ProductRow`
+- `FilterableProductTable`
+  - `SearchBar`
+  - `ProductTable`
+    - `ProductCategoryRow`
+    - `ProductRow`
 
 ## 第二步：用 React 创建一个静态版本
 
@@ -66,7 +66,7 @@ React的众多优点之一是它让你在编写代码的时候同时也在思考
 
 现在有了组件层级，是时候去实现你的应用了。最简单的方式是先创建一个静态版本：传入数据模型，渲染 UI 但没有任何交互。最好把这些过程解耦，因为创建一个静态版本更多需要的是码代码，不太需要逻辑思考，而添加交互则更多需要的是逻辑思考，不是码代码。我们会看看为什么是这样的。
 
-要构建一个用于呈现数据模型的静态版本的应用程序，你需要创建能够复用其他组件的组件，并通过 *props* 来传递数据。*props* 是一种从父级向子级传递数据的方法。如果你熟悉 *state* 的概念， 在创建静态版本的时候*不要使用 state*。State 只在交互的时候使用，即随时间变化的数据。由于这是静态版本的应用，你不需要使用它。
+要构建一个用于呈现数据模型的静态版本的应用程序，你需要创建能够复用其他组件的组件，并通过 _props_ 来传递数据。_props_ 是一种从父级向子级传递数据的方法。如果你熟悉 _state_ 的概念， 在创建静态版本的时候*不要使用 state*。State 只在交互的时候使用，即随时间变化的数据。由于这是静态版本的应用，你不需要使用它。
 
 你可以自顶向下或者自底向上构建应用。也就是，你可以从层级最高的组件开始构建(即 `FilterableProductTable`开始)或层级最低的组件开始构建(`ProductRow`)。在较为简单的例子中，通常自顶向下更容易，而在较大的项目中，自底向上会更容易并且在你构建的时候有利于编写测试。
 
@@ -82,27 +82,27 @@ React的众多优点之一是它让你在编写代码的时候同时也在思考
 
 为了使你的 UI 交互，你需要能够触发对底层数据模型的更改。React 使用 **state**，让这变的更容易。
 
-为了正确构建你的应用，首先你需要考虑你的应用所需要的最小可变状态集。要点是 DRY：*不要重复(Don't Repeat Yourself)*。找出应用程序的绝对最小表示并计算你所需要的其他任何请求。例如，如果你正在创建一个 TODO 列表，只要保存一个包含 TODO 事项的数组；不要为计数保留一个单独的状态变量。相反，当你想要渲染 TODO 计数时，只需要使用 TODO 数组的长度就可以了。
+为了正确构建你的应用，首先你需要考虑你的应用所需要的最小可变状态集。要点是 DRY：_不要重复(Don't Repeat Yourself)_。找出应用程序的绝对最小表示并计算你所需要的其他任何请求。例如，如果你正在创建一个 TODO 列表，只要保存一个包含 TODO 事项的数组；不要为计数保留一个单独的状态变量。相反，当你想要渲染 TODO 计数时，只需要使用 TODO 数组的长度就可以了。
 
 想想我们的实例应用中所有数据。我们有：
 
-  * 原产品列表
-  * 用户输入的搜索文本
-  * 复选框的值
-  * 产品的筛选列表
+- 原产品列表
+- 用户输入的搜索文本
+- 复选框的值
+- 产品的筛选列表
 
 让我们来看看每一条，找出哪一个是 state。每个数据只要考虑三个问题：
 
-  1. 它是通过 props 从父级传来的吗？如果是，他可能不是 state。
-  2. 它随着时间推移不变吗？如果是，它可能不是 state。
-  3. 你能够根据组件中任何其他的 state 或 props 把它计算出来吗？如果是，它不是 state。
+1. 它是通过 props 从父级传来的吗？如果是，他可能不是 state。
+2. 它随着时间推移不变吗？如果是，它可能不是 state。
+3. 你能够根据组件中任何其他的 state 或 props 把它计算出来吗？如果是，它不是 state。
 
 原产品列表被作为 props 传入，所以它不是 state。搜索文本和复选框似乎是 state，因为它们随时间改变并且不能由其他任何值计算出来。最后，产品的筛选列表不是 state，因为它可以通过将原始产品列表与搜索文本和复选框的值组合计算出来。
 
 最后，我们的 state 有：
 
-  * 用户输入的搜索文本
-  * 复选框的值
+- 用户输入的搜索文本
+- 复选框的值
 
 ## 第四步：确定你的 State 应该位于哪里
 
@@ -115,16 +115,16 @@ React的众多优点之一是它让你在编写代码的时候同时也在思考
 
 对你应用的每一个 state：
 
-  * 确定每一个需要这个 state 来渲染的组件。
-  * 找到一个公共所有者组件(一个在层级上高于所有其他需要这个 state 的组件的组件)
-  * 这个公共所有者组件或另一个层级更高的组件应该拥有这个 state。
-  * 如果你没有找到可以拥有这个 state 的组件，创建一个仅用来保存状态的组件并把它加入比这个公共所有者组件层级更高的地方。
+- 确定每一个需要这个 state 来渲染的组件。
+- 找到一个公共所有者组件(一个在层级上高于所有其他需要这个 state 的组件的组件)
+- 这个公共所有者组件或另一个层级更高的组件应该拥有这个 state。
+- 如果你没有找到可以拥有这个 state 的组件，创建一个仅用来保存状态的组件并把它加入比这个公共所有者组件层级更高的地方。
 
 让我们用这个策略分析我们的应用：
 
-  * `ProductTable` 需要根据 state 过滤产品列表，`SearchBar` 需要展示搜索文本和复选框状态。
-  * 公共所有者组件是 `FilterableProductTable`。
-  * 筛选文本和复选框的值应该放在 `FilterableProductTable`。
+- `ProductTable` 需要根据 state 过滤产品列表，`SearchBar` 需要展示搜索文本和复选框状态。
+- 公共所有者组件是 `FilterableProductTable`。
+- 筛选文本和复选框的值应该放在 `FilterableProductTable`。
 
 很酷，所以我们决定把 state 放在 `FilterableProductTable`。首先，为 `FilterableProductTable` 的 `constructor` 添加一个实例属性 `this.state = {filterText: '', inStockOnly: false}` 来表示我们应用的初始状态。接下来，把 `filterText` 和 `inStockOnly` 作为 prop 传入 `ProductTable` 和 `SearchBar`。最后在 `ProductTable` 中使用这些 props 来筛选每行产品信息，在 `SearchBar` 中设置表单域的值。
 

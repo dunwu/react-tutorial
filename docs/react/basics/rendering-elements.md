@@ -17,9 +17,9 @@ const element = <h1>Hello, world</h1>;
 
 与浏览器的 DOM 元素不同，React 当中的元素事实上是普通的对象，React DOM 可以确保 浏览器 DOM 的数据内容与 React 元素保持一致。
 
->**注意:**
+> **注意:**
 >
->初学者很可能把元素的定义和一个内涵更广的定义“组件”给搞混了。我们将会在[下一个章节](components-and-props.html)当中对组件进行详细的介绍。元素事实上只是构成组件的一个部分，所以我们还是推荐你先读完这一章节的内容再往后看。
+> 初学者很可能把元素的定义和一个内涵更广的定义“组件”给搞混了。我们将会在[下一个章节](components-and-props.html)当中对组件进行详细的介绍。元素事实上只是构成组件的一个部分，所以我们还是推荐你先读完这一章节的内容再往后看。
 
 ## 将元素渲染到 DOM 中
 
@@ -31,16 +31,13 @@ const element = <h1>Hello, world</h1>;
 
 在此 div 中的所有内容都将由 React DOM 来管理，所以我们将其称之为 “根” DOM 节点。
 
-我们用React 开发应用时一般只会定义一个根节点。但如果你是在一个已有的项目当中引入 React 的话，你可能会需要在不同的部分单独定义 React 根节点。
+我们用 React 开发应用时一般只会定义一个根节点。但如果你是在一个已有的项目当中引入 React 的话，你可能会需要在不同的部分单独定义 React 根节点。
 
 我们将 元素传入一个名为 `ReactDOM.render()` 的方法来将其渲染到页面上：
 
 ```js
 const element = <h1>Hello, world</h1>;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+ReactDOM.render(element, document.getElementById("root"));
 ```
 
 [在 CodePen 上试试。](http://codepen.io/gaearon/pen/rrpgNB?editors=1010)
@@ -76,11 +73,11 @@ setInterval(tick, 1000);
 
 这个示例通过 [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) 方法，每秒钟调用一次 `ReactDOM.render()`.
 
->**注意:**
+> **注意:**
 >
->在实际生产开发中, 大多数React应用只会调用一次 `ReactDOM.render()` . 在下一个章节中我们将会详细介绍 [有状态组件](state-and-lifecycle.html) 实现 DOM 更新方式。
+> 在实际生产开发中, 大多数 React 应用只会调用一次 `ReactDOM.render()` . 在下一个章节中我们将会详细介绍 [有状态组件](state-and-lifecycle.html) 实现 DOM 更新方式。
 >
->前后的内容是相辅相成的，所以你最好还是先读完本章节再往下看。
+> 前后的内容是相辅相成的，所以你最好还是先读完本章节再往下看。
 
 ## React 只会更新必要的部分
 
@@ -92,4 +89,4 @@ React DOM 首先会比较元素内容先后的不同，而在渲染过程中只�
 
 即便我们的代码每秒钟都创建了一个新的元素，在渲染步骤中，React 只改变了页面中数字发生变化的部分。
 
-根据我们以往的经验，将界面视为一个个特定时刻的固定内容（就像一帧一帧的动画），而不是随时处于变化之中（而不是处于变化中的一整段动画）将会有利于我们理清开发思路，减少各种bugs.
+根据我们以往的经验，将界面视为一个个特定时刻的固定内容（就像一帧一帧的动画），而不是随时处于变化之中（而不是处于变化中的一整段动画）将会有利于我们理清开发思路，减少各种 bugs.
