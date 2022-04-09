@@ -50,7 +50,7 @@
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "mockjs": "^1.0.1-beta3",
-    "moment": "^2.19.1",
+    "moment": "^2.29.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^5.0.6",
